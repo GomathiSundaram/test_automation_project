@@ -1,5 +1,6 @@
 # To maintain required library info
 
 pandas == 2.2.2
-# openpyxl == 3.1.2
-openpyxl == 3.1.5
+pyspark == 3.4.1
+openpyxl == 3.1.2
+faker == 24.11.0

@@ -1,0 +1,35 @@
+# This workflow will install Python dependencies, run tests, and lint with a single version of Python on a Windows machine.
+
+name: Manual automation execution
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest  # Changed to Windows environment
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.11"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if (Test-Path requirements.txt) { pip install -r requirements.txt }  # PowerShell syntax for file existence check
+
+    - name: Execute automation code
+      run: python runner.py
+
+#    - name: Execute automation code
+#      run: python data_quality.py
