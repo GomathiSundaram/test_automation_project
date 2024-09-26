@@ -1,0 +1,26 @@
+Ind==Y records
+  test_case_id                 validation_Type  ... min_val max_val
+0          FM1                     count_check  ...       0       0
+1          FM2                null_value_check  ...       0       0
+2          FM3                uniqueness_check  ...       0       0
+3          FM4                    data_compare  ...       0       0
+4          FM5                       duplicate  ...       0       0
+5          FM6  records_present_only_in_source  ...       0       0
+6          FM7     records_present_only_target  ...       0       0
+7          FM8                    schema_check  ...       0       0
+8          FM9                      name_check  ...       0       0
+9         FM10              column_range_check  ...       0       0
+
+[10 rows x 23 columns]
++-------------------------+-----------+---------------------+--------------+------------------------+--------------------------------+--------------------------------------+-----------+---------------------+--------------+------------------+--------------------------------+------------+-------------+----------------------------------------------------------+---------------+---------+---------------+-------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|source                   |source_type|source_json_multiline|source_db_name|source_schema_path      |source_transformation_query_path|target                                |target_type|target_json_multiline|target_db_name|target_schema_path|target_transformation_query_path|key_col_list|null_col_list|exclude_columns                                           |unique_col_list|dq_column|expected_values|min_val|max_val|validation_Type                                                                                                                                                                                                    |
++-------------------------+-----------+---------------------+--------------+------------------------+--------------------------------+--------------------------------------+-----------+---------------------+--------------+------------------+--------------------------------+------------+-------------+----------------------------------------------------------+---------------+---------+---------------+-------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|Contact_info_26092024.csv|csv        |NOT APPL             |NOT APPL      |contact_info_schema.json|NOT APPL                        |SAMPLEDB.CONTACT_INFO.CONTACT_INFO_RAW|snowflake  |NOT APPL             |snowflake_db  |NOT APPL          |NOT APPL                        |identifier  |identifier   |batch_date,create_date,update_date,create_user,update_user|identifier     |NOT APPL |NOT APPL       |0      |0      |[data_compare, count_check, null_value_check, uniqueness_check, schema_check, name_check, column_value_reference_check, duplicate, records_present_only_in_source, records_present_only_target, column_range_check]|
++-------------------------+-----------+---------------------+--------------+------------------------+--------------------------------+--------------------------------------+-----------+---------------------+--------------+------------------+--------------------------------+------------+-------------+----------------------------------------------------------+---------------+---------+---------------+-------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+testcases in list form [Row(source='Contact_info_26092024.csv', source_type='csv', source_json_multiline='NOT APPL', source_db_name='NOT APPL', source_schema_path='contact_info_schema.json', source_transformation_query_path='NOT APPL', target='SAMPLEDB.CONTACT_INFO.CONTACT_INFO_RAW', target_type='snowflake', target_json_multiline='NOT APPL', target_db_name='snowflake_db', target_schema_path='NOT APPL', target_transformation_query_path='NOT APPL', key_col_list='identifier', null_col_list='identifier', exclude_columns='batch_date,create_date,update_date,create_user,update_user', unique_col_list='identifier', dq_column='NOT APPL', expected_values='NOT APPL', min_val=0, max_val=0, validation_Type=['data_compare', 'count_check', 'null_value_check', 'uniqueness_check', 'schema_check', 'name_check', 'column_value_reference_check', 'duplicate', 'records_present_only_in_source', 'records_present_only_target', 'column_range_check'])]
+########################################
+source_file_path/table and type Contact_info_26092024.csv csv
+target_file_path/table SAMPLEDB.CONTACT_INFO.CONTACT_INFO_RAW snowflake
+source db name NOT APPL
+source trans query path NOT APPL

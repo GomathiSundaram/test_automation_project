@@ -4,10 +4,11 @@ This module file will be used to read data from different file and databases"""
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType
 import json
+
 from utility.genereal_lib import flatten, read_config, fetch_transformation_query_path, read_schema,fetch_file_path
 
 
-def read_file(spark, path, type, schema_path, multiline):
+def read_file(spark, path, type, schema_path, multiline, row):
     path = fetch_file_path(path)
     if type == 'csv':
         if schema_path != 'NOT APPL':
@@ -37,9 +38,14 @@ def read_file(spark, path, type, schema_path, multiline):
         pass
     elif type == 'dat':
         pass
+    else:
+        raise ValueError("Unsupported file format", type)
+    exclude_cols = row['exclude_columns'].split(',')
+    df = df.drop(*exclude_cols)
+    return df
 
 
-def read_snowflake(spark, table, database, query_path):
+def read_snowflake(spark, table, database, query_path, row):
     config = read_config(database)
 
     if query_path != 'NOT APPL':
@@ -59,10 +65,13 @@ def read_snowflake(spark, table, database, query_path):
             .option("dbtable", table) \
             .load()
 
+    exclude_cols = row['exclude_columns'].split(',')
+    df = df.drop(*exclude_cols)
     return df
 
 
-def read_db(spark, table, database, query_path):
+
+def read_db(spark, table, database, query_path, row):
     # config data( This line is to read data from database_connect.json file for specific db
     # here datavalue value coming form source_db_name / target_db_name
     config = read_config(database)
@@ -85,7 +94,9 @@ def read_db(spark, table, database, query_path):
             option("password", config['password']). \
             option("dbtable", table). \
             option("driver", config['driver']).load()
-
+    exclude_cols = row['exclude_columns'].split(
+        ',')  # --> ['batch_date','create_date','update_date','create_user','update_user']
+    df = df.drop(*exclude_cols)
     return df
 
 def read_cosmos():

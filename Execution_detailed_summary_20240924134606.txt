@@ -1,0 +1,248 @@
+Ind==Y records
+  test_case_id                 validation_Type  ... min_val max_val
+0          FM1                     count_check  ...     NaN     NaN
+1          FM2                null_value_check  ...     NaN     NaN
+2          FM3                uniqueness_check  ...     NaN     NaN
+4          FM5                       duplicate  ...     NaN     NaN
+5          FM6  records_present_only_in_source  ...     NaN     NaN
+6          FM7     records_present_only_target  ...     NaN     NaN
+7          FM8                    schema_check  ...     NaN     NaN
+
+[7 rows x 23 columns]
++-------------------------+-----------+---------------------+--------------+------------------------+--------------------------------+-------------------------+-----------+---------------------+--------------+------------------------+--------------------------------+------------+----------------------+---------------+---------------+---------+---------------+-------+-------+---------------------------------------------------------------------------------------------------------------------------------------+
+|source                   |source_type|source_json_multiline|source_db_name|source_schema_path      |source_transformation_query_path|target                   |target_type|target_json_multiline|target_db_name|target_schema_path      |target_transformation_query_path|key_col_list|null_col_list         |exclude_columns|unique_col_list|dq_column|expected_values|min_val|max_val|validation_Type                                                                                                                        |
++-------------------------+-----------+---------------------+--------------+------------------------+--------------------------------+-------------------------+-----------+---------------------+--------------+------------------------+--------------------------------+------------+----------------------+---------------+---------------+---------+---------------+-------+-------+---------------------------------------------------------------------------------------------------------------------------------------+
+|Contact_info_24092024.csv|csv        |NOT APPL             |NOT APPL      |contact_info_schema.json|NOT APPL                        |Contact_info_24092024.csv|csv        |NOT APPL             |NOT APPL      |contact_info_schema.json|NOT APPL                        |identifier  |Surname,middle_initial|NaN            |identifier     |NaN      |NaN            |NaN    |NaN    |[count_check, null_value_check, uniqueness_check, schema_check, duplicate, records_present_only_in_source, records_present_only_target]|
++-------------------------+-----------+---------------------+--------------+------------------------+--------------------------------+-------------------------+-----------+---------------------+--------------+------------------------+--------------------------------+------------+----------------------+---------------+---------------+---------+---------------+-------+-------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+testcases in list form [Row(source='Contact_info_24092024.csv', source_type='csv', source_json_multiline='NOT APPL', source_db_name='NOT APPL', source_schema_path='contact_info_schema.json', source_transformation_query_path='NOT APPL', target='Contact_info_24092024.csv', target_type='csv', target_json_multiline='NOT APPL', target_db_name='NOT APPL', target_schema_path='contact_info_schema.json', target_transformation_query_path='NOT APPL', key_col_list='identifier', null_col_list='Surname,middle_initial', exclude_columns=nan, unique_col_list='identifier', dq_column=nan, expected_values=nan, min_val=nan, max_val=nan, validation_Type=['count_check', 'null_value_check', 'uniqueness_check', 'schema_check', 'duplicate', 'records_present_only_in_source', 'records_present_only_target'])]
+########################################
+source_file_path/table and type Contact_info_24092024.csv csv
+target_file_path/table Contact_info_24092024.csv csv
+source db name NOT APPL
+source trans query path NOT APPL
++----------+-----------+----------+--------------+------+---------------------+-------------------+------------------+-----+-------+--------------------------+------------------------+-----------------+----------+------------+--------------------------+-----+----------+
+|Identifier|Surname    |given_name|middle_initial|suffix|Primary_street_number|primary_street_name|city              |state|zipcode|Primary_street_number_prev|primary_street_name_prev|city_prev        |state_prev|zipcode_prev|Email                     |Phone|birthmonth|
++----------+-----------+----------+--------------+------+---------------------+-------------------+------------------+-----+-------+--------------------------+------------------------+-----------------+----------+------------+--------------------------+-----+----------+
+|6069787990|Lopez      |Eric      |W             |null  |17032                |Brooke Causeway    |Jamesview         |IA   |15817  |142                       |Mcconnell Place         |Raymondport      |NH        |72011       |pramsey@example.org       |null |3         |
+|2356773011|Ramirez    |Amy       |null          |null  |947                  |Lam Course         |Jenniferhaven     |MP   |66519  |761                       |Fox Manors              |Bryantbury       |AR        |55454       |phernandez@example.com    |null |6         |
+|4084702520|Klein      |Joseph    |A             |PhD   |74792                |John Groves        |Marymouth         |VA   |93026  |8122                      |Simmons Drive           |Thomasmouth      |PA        |90773       |fostersteven@example.com  |null |10        |
+|2507104168|Greene     |Douglas   |null          |Jr.   |6695                 |Green Dam          |Hallburgh         |VT   |97322  |83370                     |Patricia Shoals         |East Carolynburgh|KS        |80495       |kaylaharris@example.com   |null |12        |
+|9133641356|Moore      |Vincent   |null          |null  |34052                |Samuel Fork        |Hahnstad          |MP   |81936  |4217                      |Jennifer Ridges         |Daniellehaven    |MP        |71284       |ljuarez@example.org       |null |1         |
+|7309979538|Christensen|Mark      |J             |II    |6536                 |Patel Gardens      |Barberview        |MO   |13259  |5674                      |Wood Station            |Courtneyton      |NH        |90859       |fosterjohn@example.net    |null |5         |
+|8106692662|King       |Susan     |A             |null  |73669                |Rachel Mountains   |Haleyview         |NJ   |51654  |743                       |Michelle Extension      |North Jodi       |NV        |5770        |jacobbrown@example.org    |null |9         |
+|5805226209|Yates      |Denise    |C             |DVM   |30927                |Holly Valleys      |Jeffreystad       |VT   |88988  |730                       |Heidi Light             |New Mindyfort    |RI        |36119       |joannelynch@example.com   |null |7         |
+|1765387539|Michael    |Kimberly  |null          |MD    |74079                |Patricia Walks     |Angelicaport      |MT   |23743  |4588                      |Rios Highway            |Brentstad        |NJ        |82250       |pamela27@example.org      |null |10        |
+|8372786791|Gross      |Ricardo   |null          |null  |4297                 |Mata Throughway    |South Matthewtown |DE   |13434  |156                       |Kyle Loaf               |Port Donaldburgh |DE        |80364       |angela42@example.net      |null |10        |
+|9025401978|Kim        |Joseph    |S             |null  |662                  |Hayden Plains      |Hernandezborough  |KS   |16029  |7889                      |Shane Mission           |Zunigahaven      |VA        |35992       |kathleenpowers@example.org|null |4         |
+|6087627425|Beck       |Theresa   |M             |MD    |7372                 |Amy Path           |Lake Aprilland    |NJ   |8682   |005                       |Coleman Land            |Christianstad    |NV        |27394       |allenjamie@example.com    |null |2         |
+|8987039013|Edwards    |David     |J             |null  |111                  |Christopher Ways   |Lynnberg          |FL   |43045  |94010                     |Luis Parks              |Francismouth     |MI        |44769       |david47@example.net       |null |3         |
+|8435939473|Reyes      |Michelle  |null          |DVM   |6039                 |Carl Mall          |Robinville        |MH   |76759  |5097                      |Victoria Cove           |Moyerborough     |PA        |58467       |david47@example.org       |null |10        |
+|4994503710|Leon       |David     |R             |MD    |9831                 |Leach Extensions   |Pinedaville       |HI   |74967  |348                       |Joshua Skyway           |East Paulmouth   |ME        |84276       |barbarasims@example.com   |null |12        |
+|3653899257|Robinson   |Patrick   |null          |null  |686                  |Joshua Haven       |Henryton          |VI   |73756  |99094                     |Betty Course            |Traceyfurt       |MN        |33925       |bridget09@example.com     |null |10        |
+|7696026275|Harris     |Justin    |S             |DVM   |7674                 |Blake Gardens      |South Nancyfort   |AK   |87425  |3353                      |Erika Rapid             |Markmouth        |DC        |74210       |lmeyers@example.org       |null |12        |
+|8810096788|Cooper     |Daniel    |null          |MD    |9760                 |Sutton Court       |North Mercedesfurt|FL   |21493  |295                       |Pollard Landing         |Lake Kim         |RI        |31334       |brightchelsea@example.com |null |4         |
+|4475195981|Armstrong  |Steven    |R             |MD    |903                  |Sellers Crescent   |Port Kimberly     |CA   |69739  |6979                      |Ortiz Forest            |Walkershire      |ID        |85455       |emilycollins@example.org  |null |10        |
+|1773679696|Fitzpatrick|Renee     |J             |MD    |3486                 |Maria Knolls       |Port Erika        |VT   |35860  |8128                      |Barnett Avenue          |West Jacqueline  |WV        |96258       |galvanautumn@example.com  |null |3         |
++----------+-----------+----------+--------------+------+---------------------+-------------------+------------------+-----+-------+--------------------------+------------------------+-----------------+----------+------------+--------------------------+-----+----------+
+only showing top 20 rows
+
+root
+ |-- Identifier: long (nullable = true)
+ |-- Surname: string (nullable = true)
+ |-- given_name: string (nullable = true)
+ |-- middle_initial: string (nullable = true)
+ |-- suffix: string (nullable = true)
+ |-- Primary_street_number: string (nullable = true)
+ |-- primary_street_name: string (nullable = true)
+ |-- city: string (nullable = true)
+ |-- state: string (nullable = true)
+ |-- zipcode: integer (nullable = true)
+ |-- Primary_street_number_prev: string (nullable = true)
+ |-- primary_street_name_prev: string (nullable = true)
+ |-- city_prev: string (nullable = true)
+ |-- state_prev: string (nullable = true)
+ |-- zipcode_prev: integer (nullable = true)
+ |-- Email: string (nullable = true)
+ |-- Phone: long (nullable = true)
+ |-- birthmonth: integer (nullable = true)
+
++----------+-----------+----------+--------------+------+---------------------+-------------------+------------------+-----+-------+--------------------------+------------------------+-----------------+----------+------------+--------------------------+-----+----------+
+|Identifier|Surname    |given_name|middle_initial|suffix|Primary_street_number|primary_street_name|city              |state|zipcode|Primary_street_number_prev|primary_street_name_prev|city_prev        |state_prev|zipcode_prev|Email                     |Phone|birthmonth|
++----------+-----------+----------+--------------+------+---------------------+-------------------+------------------+-----+-------+--------------------------+------------------------+-----------------+----------+------------+--------------------------+-----+----------+
+|6069787990|Lopez      |Eric      |W             |null  |17032                |Brooke Causeway    |Jamesview         |IA   |15817  |142                       |Mcconnell Place         |Raymondport      |NH        |72011       |pramsey@example.org       |null |3         |
+|2356773011|Ramirez    |Amy       |null          |null  |947                  |Lam Course         |Jenniferhaven     |MP   |66519  |761                       |Fox Manors              |Bryantbury       |AR        |55454       |phernandez@example.com    |null |6         |
+|4084702520|Klein      |Joseph    |A             |PhD   |74792                |John Groves        |Marymouth         |VA   |93026  |8122                      |Simmons Drive           |Thomasmouth      |PA        |90773       |fostersteven@example.com  |null |10        |
+|2507104168|Greene     |Douglas   |null          |Jr.   |6695                 |Green Dam          |Hallburgh         |VT   |97322  |83370                     |Patricia Shoals         |East Carolynburgh|KS        |80495       |kaylaharris@example.com   |null |12        |
+|9133641356|Moore      |Vincent   |null          |null  |34052                |Samuel Fork        |Hahnstad          |MP   |81936  |4217                      |Jennifer Ridges         |Daniellehaven    |MP        |71284       |ljuarez@example.org       |null |1         |
+|7309979538|Christensen|Mark      |J             |II    |6536                 |Patel Gardens      |Barberview        |MO   |13259  |5674                      |Wood Station            |Courtneyton      |NH        |90859       |fosterjohn@example.net    |null |5         |
+|8106692662|King       |Susan     |A             |null  |73669                |Rachel Mountains   |Haleyview         |NJ   |51654  |743                       |Michelle Extension      |North Jodi       |NV        |5770        |jacobbrown@example.org    |null |9         |
+|5805226209|Yates      |Denise    |C             |DVM   |30927                |Holly Valleys      |Jeffreystad       |VT   |88988  |730                       |Heidi Light             |New Mindyfort    |RI        |36119       |joannelynch@example.com   |null |7         |
+|1765387539|Michael    |Kimberly  |null          |MD    |74079                |Patricia Walks     |Angelicaport      |MT   |23743  |4588                      |Rios Highway            |Brentstad        |NJ        |82250       |pamela27@example.org      |null |10        |
+|8372786791|Gross      |Ricardo   |null          |null  |4297                 |Mata Throughway    |South Matthewtown |DE   |13434  |156                       |Kyle Loaf               |Port Donaldburgh |DE        |80364       |angela42@example.net      |null |10        |
+|9025401978|Kim        |Joseph    |S             |null  |662                  |Hayden Plains      |Hernandezborough  |KS   |16029  |7889                      |Shane Mission           |Zunigahaven      |VA        |35992       |kathleenpowers@example.org|null |4         |
+|6087627425|Beck       |Theresa   |M             |MD    |7372                 |Amy Path           |Lake Aprilland    |NJ   |8682   |005                       |Coleman Land            |Christianstad    |NV        |27394       |allenjamie@example.com    |null |2         |
+|8987039013|Edwards    |David     |J             |null  |111                  |Christopher Ways   |Lynnberg          |FL   |43045  |94010                     |Luis Parks              |Francismouth     |MI        |44769       |david47@example.net       |null |3         |
+|8435939473|Reyes      |Michelle  |null          |DVM   |6039                 |Carl Mall          |Robinville        |MH   |76759  |5097                      |Victoria Cove           |Moyerborough     |PA        |58467       |david47@example.org       |null |10        |
+|4994503710|Leon       |David     |R             |MD    |9831                 |Leach Extensions   |Pinedaville       |HI   |74967  |348                       |Joshua Skyway           |East Paulmouth   |ME        |84276       |barbarasims@example.com   |null |12        |
+|3653899257|Robinson   |Patrick   |null          |null  |686                  |Joshua Haven       |Henryton          |VI   |73756  |99094                     |Betty Course            |Traceyfurt       |MN        |33925       |bridget09@example.com     |null |10        |
+|7696026275|Harris     |Justin    |S             |DVM   |7674                 |Blake Gardens      |South Nancyfort   |AK   |87425  |3353                      |Erika Rapid             |Markmouth        |DC        |74210       |lmeyers@example.org       |null |12        |
+|8810096788|Cooper     |Daniel    |null          |MD    |9760                 |Sutton Court       |North Mercedesfurt|FL   |21493  |295                       |Pollard Landing         |Lake Kim         |RI        |31334       |brightchelsea@example.com |null |4         |
+|4475195981|Armstrong  |Steven    |R             |MD    |903                  |Sellers Crescent   |Port Kimberly     |CA   |69739  |6979                      |Ortiz Forest            |Walkershire      |ID        |85455       |emilycollins@example.org  |null |10        |
+|1773679696|Fitzpatrick|Renee     |J             |MD    |3486                 |Maria Knolls       |Port Erika        |VT   |35860  |8128                      |Barnett Avenue          |West Jacqueline  |WV        |96258       |galvanautumn@example.com  |null |3         |
++----------+-----------+----------+--------------+------+---------------------+-------------------+------------------+-----+-------+--------------------------+------------------------+-----------------+----------+------------+--------------------------+-----+----------+
+only showing top 20 rows
+
+validations ['count_check', 'null_value_check', 'uniqueness_check', 'schema_check', 'duplicate', 'records_present_only_in_source', 'records_present_only_target']
+****************************************
+count check validation started
+source count is 100, target count is 100 count is matching between source and target
+****************************************
+count check validation ended
++----------------+
+|Null_value_count|
++----------------+
+|              24|
++----------------+
+
+Null present  Surname
++----------------+
+|Null_value_count|
++----------------+
+|              22|
++----------------+
+
+Null present  middle_initial
+****************************************
+Uniqueness check validation started
++----------+-----+
+|identifier|count|
++----------+-----+
++----------+-----+
+
+Duplicates not present in  identifier
+Uniqueness check validation ended
+****************************************
++--------------------+---------+-------+
+|            col_name|data_type|comment|
++--------------------+---------+-------+
+|          Identifier|   bigint|   null|
+|             Surname|   string|   null|
+|          given_name|   string|   null|
+|      middle_initial|   string|   null|
+|              suffix|   string|   null|
+|Primary_street_nu...|   string|   null|
+| primary_street_name|   string|   null|
+|                city|   string|   null|
+|               state|   string|   null|
+|             zipcode|      int|   null|
+|Primary_street_nu...|   string|   null|
+|primary_street_na...|   string|   null|
+|           city_prev|   string|   null|
+|          state_prev|   string|   null|
+|        zipcode_prev|      int|   null|
+|               Email|   string|   null|
+|               Phone|   bigint|   null|
+|          birthmonth|      int|   null|
++--------------------+---------+-------+
+
++---------------+---------------+----------------+----------------+------+
+|source_col_name|target_col_name|source_data_type|target_data_type|status|
++---------------+---------------+----------------+----------------+------+
++---------------+---------------+----------------+----------------+------+
+
+****************************************
+duplicate check validation started
++----------+-----+
+|identifier|count|
++----------+-----+
++----------+-----+
+
+Duplicates not present
+duplicate check validation ended
+****************************************
+records_present_only_in_source not in target : 0
++----------+
+|identifier|
++----------+
++----------+
+
+records_present_only_in_target and not source : 0
++----------+
+|identifier|
++----------+
++----------+
+
+{'validation_Type': ['count_check', 'null_value_check', 'null_value_check', 'uniqueness_check', 'schema_check', 'duplicate', 'records_present_only_in_source', 'records_present_only_target'], 'source': ['Contact_info_24092024.csv', 'Contact_info_24092024.csv', 'Contact_info_24092024.csv', 'Contact_info_24092024.csv', 'Contact_info_24092024.csv', 'Contact_info_24092024.csv', 'Contact_info_24092024.csv', 'Contact_info_24092024.csv'], 'target': ['Contact_info_24092024.csv', 'Contact_info_24092024.csv', 'Contact_info_24092024.csv', 'Contact_info_24092024.csv', 'Contact_info_24092024.csv', 'Contact_info_24092024.csv', 'Contact_info_24092024.csv', 'Contact_info_24092024.csv'], 'number_of_source_Records': [100, 'NOT APPL', 'NOT APPL', 'NOT APPL', 18, 'NOT APPL', 100, 100], 'number_of_target_Records': [100, 100, 100, 100, 18, 100, 100, 100], 'number_of_failed_Records': [0, 24, 22, 0, 0, 0, 0, 0], 'column': ['identifier', 'Surname', 'middle_initial', 'identifier', 'identifier', 'identifier', 'identifier', 'identifier'], 'status': ['PASS', 'FAIL', 'FAIL', 'PASS', 'PASS', 'PASS', 'PASS', 'PASS'], 'source_type': ['csv', 'csv', 'csv', 'csv', 'csv', 'csv', 'csv', 'csv'], 'target_type': ['csv', 'csv', 'csv', 'csv', 'csv', 'csv', 'csv', 'csv']}
+    validation_Type                     source  ... source_type target_type
+0       count_check  Contact_info_24092024.csv  ...         csv         csv
+1  null_value_check  Contact_info_24092024.csv  ...         csv         csv
+2  null_value_check  Contact_info_24092024.csv  ...         csv         csv
+3  uniqueness_check  Contact_info_24092024.csv  ...         csv         csv
+4      schema_check  Contact_info_24092024.csv  ...         csv         csv
+
+[5 rows x 10 columns]
++--------------------+--------------------+--------------------+------------------------+------------------------+------------------------+--------------+------+-----------+-----------+
+|     validation_Type|              source|              target|number_of_source_Records|number_of_target_Records|number_of_failed_Records|        column|status|source_type|target_type|
++--------------------+--------------------+--------------------+------------------------+------------------------+------------------------+--------------+------+-----------+-----------+
+|         count_check|Contact_info_2409...|Contact_info_2409...|                     100|                     100|                       0|    identifier|  PASS|        csv|        csv|
+|    null_value_check|Contact_info_2409...|Contact_info_2409...|                NOT APPL|                     100|                      24|       Surname|  FAIL|        csv|        csv|
+|    null_value_check|Contact_info_2409...|Contact_info_2409...|                NOT APPL|                     100|                      22|middle_initial|  FAIL|        csv|        csv|
+|    uniqueness_check|Contact_info_2409...|Contact_info_2409...|                NOT APPL|                     100|                       0|    identifier|  PASS|        csv|        csv|
+|        schema_check|Contact_info_2409...|Contact_info_2409...|                      18|                      18|                       0|    identifier|  PASS|        csv|        csv|
+|           duplicate|Contact_info_2409...|Contact_info_2409...|                NOT APPL|                     100|                       0|    identifier|  PASS|        csv|        csv|
+|records_present_o...|Contact_info_2409...|Contact_info_2409...|                     100|                     100|                       0|    identifier|  PASS|        csv|        csv|
+|records_present_o...|Contact_info_2409...|Contact_info_2409...|                     100|                     100|                       0|    identifier|  PASS|        csv|        csv|
++--------------------+--------------------+--------------------+------------------------+------------------------+------------------------+--------------+------+-----------+-----------+
+
++------------+--------------------+--------------------+-----------+---------------------+--------------+--------------------------------+--------------------+--------------------+-----------+---------------------+--------------+--------------------+--------------------------------+------------+--------------------+---------------+---------------+-------------+---------+---------------+-------+-------+
+|test_case_id|     validation_Type|              source|source_type|source_json_multiline|source_db_name|source_transformation_query_path|  source_schema_path|              target|target_type|target_json_multiline|target_db_name|  target_schema_path|target_transformation_query_path|key_col_list|       null_col_list|unique_col_list|exclude_columns|execution_ind|dq_column|expected_values|min_val|max_val|
++------------+--------------------+--------------------+-----------+---------------------+--------------+--------------------------------+--------------------+--------------------+-----------+---------------------+--------------+--------------------+--------------------------------+------------+--------------------+---------------+---------------+-------------+---------+---------------+-------+-------+
+|         FM1|         count_check|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|
+|         FM2|    null_value_check|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|
+|         FM3|    uniqueness_check|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|
+|         FM5|           duplicate|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|
+|         FM6|records_present_o...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|
+|         FM7|records_present_o...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|
+|         FM8|        schema_check|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|
++------------+--------------------+--------------------+-----------+---------------------+--------------+--------------------------------+--------------------+--------------------+-----------+---------------------+--------------+--------------------+--------------------------------+------------+--------------------+---------------+---------------+-------------+---------+---------------+-------+-------+
+
++--------------------+--------------------+--------------------+------------------------+------------------------+------------------------+--------------+------+-----------+-----------+
+|     validation_Type|              source|              target|number_of_source_Records|number_of_target_Records|number_of_failed_Records|        column|status|source_type|target_type|
++--------------------+--------------------+--------------------+------------------------+------------------------+------------------------+--------------+------+-----------+-----------+
+|         count_check|Contact_info_2409...|Contact_info_2409...|                     100|                     100|                       0|    identifier|  PASS|        csv|        csv|
+|    null_value_check|Contact_info_2409...|Contact_info_2409...|                NOT APPL|                     100|                      24|       Surname|  FAIL|        csv|        csv|
+|    null_value_check|Contact_info_2409...|Contact_info_2409...|                NOT APPL|                     100|                      22|middle_initial|  FAIL|        csv|        csv|
+|    uniqueness_check|Contact_info_2409...|Contact_info_2409...|                NOT APPL|                     100|                       0|    identifier|  PASS|        csv|        csv|
+|        schema_check|Contact_info_2409...|Contact_info_2409...|                      18|                      18|                       0|    identifier|  PASS|        csv|        csv|
+|           duplicate|Contact_info_2409...|Contact_info_2409...|                NOT APPL|                     100|                       0|    identifier|  PASS|        csv|        csv|
+|records_present_o...|Contact_info_2409...|Contact_info_2409...|                     100|                     100|                       0|    identifier|  PASS|        csv|        csv|
+|records_present_o...|Contact_info_2409...|Contact_info_2409...|                     100|                     100|                       0|    identifier|  PASS|        csv|        csv|
++--------------------+--------------------+--------------------+------------------------+------------------------+------------------------+--------------+------+-----------+-----------+
+
++------------------------+------------------------+------------------------+--------------+------+--------------------+
+|number_of_source_Records|number_of_target_Records|number_of_failed_Records|        column|status|            hash_key|
++------------------------+------------------------+------------------------+--------------+------+--------------------+
+|                     100|                     100|                       0|    identifier|  PASS|1319c2d26c43ab68b...|
+|                NOT APPL|                     100|                      24|       Surname|  FAIL|23af479f02d25c8d3...|
+|                NOT APPL|                     100|                      22|middle_initial|  FAIL|23af479f02d25c8d3...|
+|                NOT APPL|                     100|                       0|    identifier|  PASS|2c4f223c2411f5940...|
+|                      18|                      18|                       0|    identifier|  PASS|2115f1a08d716e75f...|
+|                NOT APPL|                     100|                       0|    identifier|  PASS|158bf464812ba4e8c...|
+|                     100|                     100|                       0|    identifier|  PASS|a2b61cb7a113253e9...|
+|                     100|                     100|                       0|    identifier|  PASS|62c5a376d062848da...|
++------------------------+------------------------+------------------------+--------------+------+--------------------+
+
++--------------------+------------+--------------------+--------------------+-----------+---------------------+--------------+--------------------------------+--------------------+--------------------+-----------+---------------------+--------------+--------------------+--------------------------------+------------+--------------------+---------------+---------------+-------------+---------+---------------+-------+-------+------------------------+------------------------+------------------------+--------------+------+--------------+-----------+-----------+
+|            hash_key|test_case_id|     validation_Type|              source|source_type|source_json_multiline|source_db_name|source_transformation_query_path|  source_schema_path|              target|target_type|target_json_multiline|target_db_name|  target_schema_path|target_transformation_query_path|key_col_list|       null_col_list|unique_col_list|exclude_columns|execution_ind|dq_column|expected_values|min_val|max_val|number_of_source_Records|number_of_target_Records|number_of_failed_Records|        column|status|    batch_date|create_user|update_user|
++--------------------+------------+--------------------+--------------------+-----------+---------------------+--------------+--------------------------------+--------------------+--------------------+-----------+---------------------+--------------+--------------------+--------------------------------+------------+--------------------+---------------+---------------+-------------+---------+---------------+-------+-------+------------------------+------------------------+------------------------+--------------+------+--------------+-----------+-----------+
+|2115f1a08d716e75f...|         FM8|        schema_check|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|                      18|                      18|                       0|    identifier|  PASS|20240924134606|      gomat|      gomat|
+|62c5a376d062848da...|         FM7|records_present_o...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|                     100|                     100|                       0|    identifier|  PASS|20240924134606|      gomat|      gomat|
+|1319c2d26c43ab68b...|         FM1|         count_check|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|                     100|                     100|                       0|    identifier|  PASS|20240924134606|      gomat|      gomat|
+|158bf464812ba4e8c...|         FM5|           duplicate|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|                NOT APPL|                     100|                       0|    identifier|  PASS|20240924134606|      gomat|      gomat|
+|23af479f02d25c8d3...|         FM2|    null_value_check|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|                NOT APPL|                     100|                      22|middle_initial|  FAIL|20240924134606|      gomat|      gomat|
+|23af479f02d25c8d3...|         FM2|    null_value_check|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|                NOT APPL|                     100|                      24|       Surname|  FAIL|20240924134606|      gomat|      gomat|
+|a2b61cb7a113253e9...|         FM6|records_present_o...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|                     100|                     100|                       0|    identifier|  PASS|20240924134606|      gomat|      gomat|
+|2c4f223c2411f5940...|         FM3|    uniqueness_check|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|                        NOT APPL|contact_info_sche...|Contact_info_2409...|        csv|             NOT APPL|      NOT APPL|contact_info_sche...|                        NOT APPL|  identifier|Surname,middle_in...|     identifier|            NaN|            Y|      NaN|            NaN|    NaN|    NaN|                NOT APPL|                     100|                       0|    identifier|  PASS|20240924134606|      gomat|      gomat|
++--------------------+------------+--------------------+--------------------+-----------+---------------------+--------------+--------------------------------+--------------------+--------------------+-----------+---------------------+--------------+--------------------+--------------------------------+------------+--------------------+---------------+---------------+-------------+---------+---------------+-------+-------+------------------------+------------------------+------------------------+--------------+------+--------------+-----------+-----------+
+

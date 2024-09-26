@@ -1,0 +1,26 @@
+Ind==Y records
+  test_case_id                 validation_Type  ... min_val max_val
+0          FM1                     count_check  ...     NaN     NaN
+1          FM2                null_value_check  ...     NaN     NaN
+2          FM3                uniqueness_check  ...     NaN     NaN
+3          FM4                    data_compare  ...     NaN     NaN
+4          FM5                       duplicate  ...     NaN     NaN
+5          FM6  records_present_only_in_source  ...     NaN     NaN
+6          FM7     records_present_only_target  ...     NaN     NaN
+7          FM8                    schema_check  ...     NaN     NaN
+8          FM9                      name_check  ...     NaN     NaN
+9         FM10              column_range_check  ...     NaN     NaN
+
+[10 rows x 23 columns]
++-------------------------+-----------+---------------------+--------------+------------------------+--------------------------------+--------------------+-----------+---------------------+--------------+------------------------+--------------------------------+------------+-------------+---------------+---------------+---------+---------------+-------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|source                   |source_type|source_json_multiline|source_db_name|source_schema_path      |source_transformation_query_path|target              |target_type|target_json_multiline|target_db_name|target_schema_path      |target_transformation_query_path|key_col_list|null_col_list|exclude_columns|unique_col_list|dq_column|expected_values|min_val|max_val|validation_Type                                                                                                                                                                                                    |
++-------------------------+-----------+---------------------+--------------+------------------------+--------------------------------+--------------------+-----------+---------------------+--------------+------------------------+--------------------------------+------------+-------------+---------------+---------------+---------+---------------+-------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|Contact_info_24092024.csv|csv        |NOT APPL             |NOT APPL      |contact_info_schema.json|NOT APPL                        |contact_info_raw.csv|csv        |NOT APPL             |NOT APPL      |contact_info_schema.json|NOT APPL                        |identifier  |identifier   |NaN            |identifier     |NaN      |NaN            |NaN    |NaN    |[data_compare, count_check, null_value_check, uniqueness_check, schema_check, name_check, column_value_reference_check, duplicate, records_present_only_in_source, records_present_only_target, column_range_check]|
++-------------------------+-----------+---------------------+--------------+------------------------+--------------------------------+--------------------+-----------+---------------------+--------------+------------------------+--------------------------------+------------+-------------+---------------+---------------+---------+---------------+-------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+testcases in list form [Row(source='Contact_info_24092024.csv', source_type='csv', source_json_multiline='NOT APPL', source_db_name='NOT APPL', source_schema_path='contact_info_schema.json', source_transformation_query_path='NOT APPL', target='contact_info_raw.csv', target_type='csv', target_json_multiline='NOT APPL', target_db_name='NOT APPL', target_schema_path='contact_info_schema.json', target_transformation_query_path='NOT APPL', key_col_list='identifier', null_col_list='identifier', exclude_columns=nan, unique_col_list='identifier', dq_column=nan, expected_values=nan, min_val=nan, max_val=nan, validation_Type=['data_compare', 'count_check', 'null_value_check', 'uniqueness_check', 'schema_check', 'name_check', 'column_value_reference_check', 'duplicate', 'records_present_only_in_source', 'records_present_only_target', 'column_range_check'])]
+########################################
+source_file_path/table and type Contact_info_24092024.csv csv
+target_file_path/table contact_info_raw.csv csv
+source db name NOT APPL
+source trans query path NOT APPL

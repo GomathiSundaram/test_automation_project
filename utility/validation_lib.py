@@ -40,8 +40,8 @@ def count_check(source, target, row, Out,validation):
                      target_type=row['target_type'],
                      Out=Out)
 
-    print("*" * 40)
     print("count check validation ended")
+    print("*" * 40)
 
 
 def duplicate_check(target, key_cols, row, Out,validation):
@@ -124,6 +124,8 @@ def uniqueness_check(target, unique_col, row, Out,validation):
 
 
 def null_value_check(target, null_cols, row, Out,validation):
+    print("*" * 40)
+    print("null value check validation started")
     null_columns_list = null_cols.split(",")
     tgt_cnt = target.count()
     for column in null_columns_list:
@@ -169,9 +171,13 @@ def null_value_check(target, null_cols, row, Out,validation):
                          source_type=row['source_type'],
                          target_type=row['target_type'],
                          Out=Out)
+    print("null value check validation ended")
+    print("*" * 40)
 
 
 def records_present_only_in_target(source, target, keyList, row, Out,validation):
+    print("*" * 40)
+    print("records_present_only_in_target check validation started")
     keyList = keyList.split(",")
     src_cnt = source.count()
     tgt_cnt = target.count()
@@ -204,9 +210,12 @@ def records_present_only_in_target(source, target, keyList, row, Out,validation)
                      source_type=row['source_type'],
                      target_type=row['target_type'],
                      Out=Out)
-
+    print("records_present_only_in_target check validation ended")
+    print("*" * 40)
 
 def records_present_only_in_source(source, target, keyList, row, Out,validation):
+    print("*" * 40)
+    print("records_present_only_in_source check validation started")
     keyList = keyList.split(",")
     smt = source.select(keyList).exceptAll(target.select(keyList))
     failed = smt.count()
@@ -239,9 +248,12 @@ def records_present_only_in_source(source, target, keyList, row, Out,validation)
                      source_type=row['source_type'],
                      target_type=row['target_type'],
                      Out=Out)
-
+    print("records_present_only_in_source check validation ended")
+    print("*" * 40)
 
 def data_compare(source, target, keycolumn, row, Out,validation):
+    print("*" * 40)
+    print("data_compare check validation started")
     keycolumn = keycolumn.split(",")
     keycolumn = [i.lower() for i in keycolumn]
     src_cnt = source.count()
@@ -300,10 +312,14 @@ def data_compare(source, target, keycolumn, row, Out,validation):
                 temp_join = temp_source.join(temp_target, keycolumn, how='full_outer')
                 temp_join.withColumn("comparison", when(col('source_' + column) == col("target_" + column),
                                                         "True").otherwise("False")).filter(
-                    f"comparison == False and source_{column} is not null and target_{column} is not null").show()
+                    f"comparison == False ").show()
+    print("data_compare check validation ended")
+    print("*" * 40)
 
 
 def schema_check(source, target, spark,row, Out,validation):
+    print("*" * 40)
+    print("schema_check validation started")
     source.createOrReplaceTempView("source")
     target.createOrReplaceTempView("target")
     source_schema = spark.sql("describe source")
@@ -343,9 +359,13 @@ def schema_check(source, target, spark,row, Out,validation):
                      source_type=row['source_type'],
                      target_type=row['target_type'],
                      Out=Out)
+    print("schema_check validation ended")
+    print("*" * 40)
 
 
 def name_check(target, column):
+    print("*" * 40)
+    print("name_check validation started")
     pattern = "^[a-zA-Z]"
 
     # Add a new column 'is_valid' indicating if the name contains only alphabetic characters
@@ -359,14 +379,21 @@ def name_check(target, column):
         pass
     else:
         pass
-
+    print("name_check validation ended")
+    print("*" * 40)
 
 def check_range(target, column, min_val, max_val):
+    print("*" * 40)
+    print("check_range validation started")
     invalid_count = target.filter((col(column) < min_val) | (col(column) > max_val)).count()
     return invalid_count == 0
+    print("check_range validation ended")
+    print("*" * 40)
 
 
 def date_check(target, dq_col):
+    print("*" * 40)
+    print("date_check validation started")
     def is_valid_date_format(date_str: str) -> bool:
         try:
             # Try to parse the string in the format 'dd-mm-yyyy'
@@ -385,3 +412,5 @@ def date_check(target, dq_col):
         print("fail")
     else:
         print('pass')
+    print("date_check validation ended")
+    print("*" * 40)
