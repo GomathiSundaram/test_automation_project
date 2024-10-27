@@ -389,6 +389,24 @@ def check_range(target, column, min_val, max_val):
     return invalid_count == 0
     print("check_range validation ended")
     print("*" * 40)
+def column_value_reference_check(target, column, expected_values, Out, row):
+    expected_values = expected_values.split(",")
+    failed = target.withColumn("is_present", col(column).isin(expected_values)).filter('is_present = False')
+    failed.show()
+    failed_count = failed.count()
+    target_count = target.count()
+    if failed_count > 0:
+        write_output(validation_Type="column_value_reference_check", source=row['source'], target=row['target'],
+                     Number_of_source_Records='NOT APPL', Number_of_target_Records=target_count,
+                     Number_of_failed_Records=failed_count, column=column, Status='FAIL',
+                     source_type='NOT APPL',
+                     target_type=row['target_type'], Out=Out)
+    else:
+        write_output(validation_Type="column_value_reference_check", source=row['source'], target=row['target'],
+                     Number_of_source_Records='NOT APPL', Number_of_target_Records=target_count,
+                     Number_of_failed_Records=0, column=column, Status='PASS',
+                     source_type='NOT APPL',
+                     target_type=row['target_type'], Out=Out)
 
 
 def date_check(target, dq_col):

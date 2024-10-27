@@ -5,24 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9701586c-33cc-4b6f-b8a4-56affd637394" name="Changes" comment="Test Automation Framework - git CI/CD">
-      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240924134606.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240924213744.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240925221519.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240925224950.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240926120937.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/Master_Test_Template - Copy.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev_code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/Contact_info_26092024.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/ci_test_date_gen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transformation_queries/contact_info_b2s_transformation.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240927103328.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240927104925.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240927110757.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240927220050.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240929212746.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240929214318.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240929222546.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240929224539.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Execution_detailed_summary_20240929225319.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/Contact_info_29092024.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/yellow_tripdata_2024-03.parquet" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/Master_Test_Template.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/config/Master_Test_Template.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/database_connection.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/database_connection.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/dev_code.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/Contact_info_26092024.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/runner.py" beforeDir="false" afterPath="$PROJECT_DIR$/runner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/summary.csv" beforeDir="false" afterPath="$PROJECT_DIR$/summary.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transformation_queries/contact_info_r2b.sql" beforeDir="false" afterPath="$PROJECT_DIR$/transformation_queries/contact_info_r2b.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utility/read_lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/utility/read_lib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utility/report_lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/utility/report_lib.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utility/validation_lib.py" beforeDir="false" afterPath="$PROJECT_DIR$/utility/validation_lib.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +62,7 @@
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.read_yellowcab.executor&quot;: &quot;Run&quot;,
     &quot;Python.runner.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
@@ -98,6 +100,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="read_yellowcab" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="test_automation_project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/read_yellowcab.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="runner" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="test_automation_project" />
       <option name="ENV_FILES" value="" />
@@ -123,6 +147,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.runner" />
+        <item itemvalue="Python.read_yellowcab" />
       </list>
     </recent_temporary>
   </component>
@@ -174,8 +199,27 @@
       <option name="project" value="LOCAL" />
       <updated>1727016539825</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Test Automation Framework - git CI/CD">
+      <option name="closed" value="true" />
+      <created>1727377228107</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727377228107</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

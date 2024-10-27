@@ -50,7 +50,7 @@ batch_id = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
 
 # Load from File to DB raw table
 
-file_path = fetch_file_path('Contact_info_21092024.csv')
+file_path = fetch_file_path('Contact_info_29092024.csv')
 schema=read_schema('contact_info_schema.json')
 file = spark.read.csv(file_path, header=True, schema=schema)
 file = file.filter(file.Identifier.isNotNull())

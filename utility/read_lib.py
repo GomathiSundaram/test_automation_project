@@ -8,44 +8,57 @@ import json
 from utility.genereal_lib import flatten, read_config, fetch_transformation_query_path, read_schema,fetch_file_path
 
 
-def read_file(spark, path, type, schema_path, multiline, row):
-    path = fetch_file_path(path)
+def read_file(spark, path, type, schema_path, multiline,row):
+    # Resolve the file path if not ADLS
+    if type != 'adls':
+        path = fetch_file_path(path)
+
+    # Initialize the dataframe variable
+    df = None
+
+    # Handle different file types
     if type == 'csv':
         if schema_path != 'NOT APPL':
             schema = read_schema(schema_path)
-            # with open(schema_path, 'r') as schema_file:
-            #     schema = StructType.fromJson(json.load(schema_file))
             df = spark.read.schema(schema).csv(path, header=True)
-            return df
         else:
             df = spark.read.csv(path, header=True, inferSchema=True)
-            return df
 
     elif type == 'json':
         df = spark.read.option("multiline", multiline).json(path)
         df = flatten(df)
-        return df
+
     elif type == 'parquet':
         df = spark.read.parquet(path)
-        return df
+
     elif type == 'avro':
         df = spark.read.format('avro').load(path)
-        return df
+
     elif type == 'text':
         df = spark.read.format("text").load(path)
-        return df
-    elif type == 'orc':
-        pass
-    elif type == 'dat':
-        pass
-    else:
-        raise ValueError("Unsupported file format", type)
+
+    elif type == 'adls':
+        config = read_config('adls')
+        adls_account_name = config['adls_account_name']
+        adls_container_name = config["adls_container_name"]
+        key = config['key']
+
+        # Set Spark configuration for ADLS Gen2
+        spark.conf.set(f"fs.azure.account.auth.type.{adls_account_name}.dfs.core.windows.net", "SharedKey")
+        spark.conf.set(f"fs.azure.account.key.{adls_account_name}.dfs.core.windows.net", key)
+
+        adls_file_system_url = f"abfss://{adls_container_name}@{adls_account_name}.dfs.core.windows.net/"
+        adls_folder_path = f"{adls_file_system_url}{path}"
+
+        #df = spark.read.parquet(adls_folder_path)
+        df = spark.read.csv(adls_folder_path, header=True)
+
     exclude_cols = row['exclude_columns'].split(',')
-    df = df.drop(*exclude_cols)
-    return df
+    return df.drop(*exclude_cols)
 
 
 def read_snowflake(spark, table, database, query_path, row):
+    exclude_cols = row['exclude_columns'].split(',')
     config = read_config(database)
 
     if query_path != 'NOT APPL':
@@ -65,7 +78,7 @@ def read_snowflake(spark, table, database, query_path, row):
             .option("dbtable", table) \
             .load()
 
-    exclude_cols = row['exclude_columns'].split(',')
+
     df = df.drop(*exclude_cols)
     return df
 

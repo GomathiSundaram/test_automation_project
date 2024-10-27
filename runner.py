@@ -9,7 +9,8 @@ import datetime
 from pyspark.sql.types import StructType, StructField, StringType
 from utility.read_lib import read_file, read_snowflake, read_db
 from utility.validation_lib import count_check, duplicate_check, uniqueness_check, null_value_check, \
-    records_present_only_in_target, records_present_only_in_source, data_compare, schema_check, name_check, check_range
+    records_present_only_in_target, records_present_only_in_source, data_compare, schema_check, name_check, check_range, \
+    column_value_reference_check, date_check
 from pyspark.sql.functions import udf, col, regexp_extract, upper, isnan, when, trim, count, lit, sha2, concat
 import sys
 # Jars setup
@@ -166,6 +167,12 @@ for row in testcases:
             name_check(target=target, column=row['dq_column'])
         elif validation == 'check_range':
             check_range(target=target, column=row['dq_column'], min_val=row['min_val'], max_val=row['max_val'])
+        elif validation == 'column_value_reference_check':
+            column_value_reference_check(target=target, column=row['dq_column'], expected_values=row['expected_values'], Out=Out, row=row)
+        elif validation == 'date_check':
+            date_check(target=target, dq_col=row['dq_column'])
+
+
 
 print(Out)
 
@@ -223,3 +230,5 @@ final_result.write.mode("append") \
     .option("url", url) \
     .option("dbtable", "SAMPLEDB.CONTACT_INFO.AUTOMATION_SUMMARY") \
     .save()
+
+spark.stop()
